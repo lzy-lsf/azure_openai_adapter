@@ -688,6 +688,9 @@ class AzureOpenAILargeLanguageModel(_CommonAzureOpenAI, LargeLanguageModel):
         ):
             tokens_per_message = 3
             tokens_per_name = 1
+        elif model == 'cl100k_base':
+            tokens_per_message = 3
+            tokens_per_name = 1
         else:
             raise NotImplementedError(
                 f"get_num_tokens_from_messages() is not presently implemented for model {model}.See https://github.com/openai/openai-python/blob/main/chatml.md for information on how messages are converted to tokens."
